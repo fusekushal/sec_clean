@@ -94,7 +94,7 @@ def modified_split(cik_name: str, date: str, url, contents, max_retries=3):
 
 if __name__ == "__main__":
     logger.info("Cleaning contents Started")
-    folder_path = "data/2023"
+    folder_path = "data/output/table_contents/year_wise_content/2022"
     filenames = sorted(os.listdir(folder_path))
     for filename in filenames:
         if filename.endswith(".parquet"):
@@ -128,7 +128,7 @@ if __name__ == "__main__":
             
             input_file_name = os.path.splitext(os.path.basename(input_file_path))[0]
             
-            output_file_path = f"data/output/table_contents/2023/{input_file_name}.parquet"
+            output_file_path = f"data/output/clean_data/2022/{input_file_name}"
             save_dataframepqt_pd(final_table_df, output_file_path)
             logger.info(f"{input_file_name} Saved to {output_file_path}!!")
 
